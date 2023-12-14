@@ -46,8 +46,8 @@ const StickySidebar = ({ className, children }: Props): JSX.Element => {
 		// if your sidebar has dynamic data and you are fetching it and afterwards the height of the sidebar changes
 		// you will need to add a size observer on the element to recalculate the sticky positions
 		//
-		// new ResizeObserver(onResizeHandler).observe(sidebarElRef.current);
-		// new ResizeObserver(onResizeHandler).observe(window.document.body);
+		new ResizeObserver(onResizeHandler).observe(sidebarElRef.current);
+		new ResizeObserver(onResizeHandler).observe(window.document.body);
 		window.addEventListener('scroll', homePageOnScroll);
 		return () => {
 			window.removeEventListener('scroll', homePageOnScroll);
